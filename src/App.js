@@ -30,7 +30,7 @@ function App() {
                 </p>
               </header>
               <div className="project-links">
-                <a href="https://pathfinder-interactive.herokuapp.com/" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-square"></i></a>
+                <a href="https://github.com/AGuyNamedC-Los/pathfinder_interactive" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-square"></i></a>
                 <a href="https://pathfinder-interactive.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/AGuyNamedC-Los/pathfinder_interactive/master/path.png" alt="pathfinder interactive"></img></a>
               </div>
               <h2>Using</h2>
@@ -54,12 +54,13 @@ function App() {
                 </p>
               </header>
               <div className="project-links">
-                <a href="https://pathfinder-interactive.herokuapp.com/" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-square"></i></a>
-                <a href="https://pathfinder-interactive.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/AGuyNamedC-Los/pathfinder_interactive/master/path.png" alt="pathfinder interactive"></img></a>
+                <a href="https://github.com/AGuyNamedC-Los/carlos-castillo-portfolio" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-square"></i></a>
+                <a href="https://carlos-castillo-portfolio.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/AGuyNamedC-Los/personal-website/master/public/bitmoji.png" alt="pathfinder interactive"></img></a>
               </div>
               <h2>Using</h2>
               <div className="tools">
                 <span>Javascript</span>
+                <span>React</span>
                 <span>Heroku</span>
                 <span>HTML5</span>
                 <span>CSS</span>
