@@ -1,38 +1,151 @@
-.App {
-  text-align: center;
+body {
+  padding: 0;
+  margin: 0;
+  /* background-color: #17141D; */
+  background-color: #17181A;
+  /* background-color:  #1b1724; */
+  background-color:  #110d1b;
+  color: white;
+  font-family: 'DM Mono', monospace;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*-------------------------
+  project cards  
+-------------------------*/
+/* scroll bar for the card list */
+
+/* .card-list::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.card-list::-webkit-scrollbar-thumb {
+  background: #201c29;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-list::-webkit-scrollbar-track {
+  background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
+} */
+
+.card-list {
+  display: flex;
+  margin: 10rem auto;
+  padding: 5rem 3rem;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 95%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-radius: 16px;
+  height: 29rem;
+  max-width: 20rem;
+  min-width: 20rem;
+  padding: 1rem .5rem;
+  /* background-color: #4b42ff; */
+  /* background-color: #191425; */
+  background-color: #131214;
+  box-shadow: -1rem 0 3rem #000;
+  transition: .5s;
+}
+
+.card:hover {transform: translateY(-2rem);}
+
+.card:hover~.card {transform: translateX(6rem);}
+
+.card:not(:first-child) {margin-left: -5rem;} /* to make it appear as if the cards are overrlapping each other */
+
+.card header, .card i {transition: .5s;}
+
+/* change color of card's text and image on hover */
+.card:hover header, .card:hover i, .card:hover h2, .card:hover .tools span {
+  background: linear-gradient(90deg, #ACF1FF, #0290EE );
+  text-shadow: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card header h1, .card header p {text-align: center;}
+
+.project-links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card a {height: 100%;}
+
+.card a:hover i {background-color:white;}
+
+.project-links a:hover::after {
+  display: block;
+  position: absolute;
+  color: red;
+}
+
+.project-links a:nth-child(1):hover::after {
+  left: 50%;
+  transform: translate(-110%, .55rem);
+  content: "Project code";
+}
+
+.project-links a:nth-child(2):hover::after {
+  left: 50%;
+  transform: translate(10%, .25rem);
+  content: "Project Link";
+}
+
+.card i {
+  background-color: #17181A;
   color: white;
+  font-size: 3rem;
 }
 
-.App-link {
-  color: #61dafb;
+.card img {
+  width: 100%;
+  max-width: 3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card h2 {text-align: center;}
+
+.tools {
+  width: 100%;
+  display: grid;
+  grid-gap: 10px 5px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: auto;
+}
+
+.tools span {
+  text-align: center;
+  display: inline;
+  border: solid;
+  border-radius: 16px;
+  border-width: 2px;
+}
+
+.progress {
+  border-radius: 30px;
+  padding: .25rem .25rem;
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-value {
+  border-radius: 30px;
+  padding: .75rem 0;
+  width: 7%;
+  transition: 1.5s;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+}
+
+/* pathfinder interactive progress */
+.card:hover .progress-value {width: 80%;}
+
+.card:hover .progress-value {
+  background-image: linear-gradient(to bottom, #ACF1FF, #0290EE);
 }
