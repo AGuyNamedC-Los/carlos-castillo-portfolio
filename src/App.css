@@ -53,16 +53,26 @@ body {
   transition: .5s;
 }
 
-.card:hover {transform: translateY(-2rem);}
-
-.card:hover~.card {transform: translateX(6rem);}
-
+.card:hover {transform: translateY(-2rem);} /* move the card up on hover */
+.card:hover~.card {transform: translateX(6rem);}  /* move all the cards to the right on a hovered card */
 .card:not(:first-child) {margin-left: -5rem;} /* to make it appear as if the cards are overrlapping each other */
+.card header, .card i {transition: .75s;}  
 
-.card header, .card i {transition: .5s;}
 
-/* change color of card's text and image on hover */
-.card:hover header, .card:hover i, .card:hover h2, .card:hover .tools span {
+/* changing the text of each card */
+.card:hover:nth-child(4n+1) header, 
+.card:hover:nth-child(4n+1) h2, 
+.card:hover:nth-child(4n+1) .tools span {
+  background: linear-gradient(90deg, #88FFD1, #2BC4A2);
+  text-shadow: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card:hover:nth-child(4n+2) header, 
+.card:hover:nth-child(4n+2) h2, 
+.card:hover:nth-child(4n+2) .tools span {
   background: linear-gradient(90deg, #ACF1FF, #0290EE );
   text-shadow: none;
   background-clip: text;
@@ -70,7 +80,28 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.card header h1, .card header p {text-align: center;}
+.card:hover:nth-child(4n+3) header, 
+.card:hover:nth-child(4n+3) h2, 
+.card:hover:nth-child(4n+3) .tools span {
+  background: linear-gradient(90deg, #D9BFFF, #582ACB);
+  text-shadow: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card:hover:nth-child(4n+4) header, 
+.card:hover:nth-child(4n+4) h2, 
+.card:hover:nth-child(4n+4) .tools span {
+  background: linear-gradient(90deg,#FFD567, #FF7139);
+  text-shadow: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card header h1, 
+.card header p {text-align: center;}
 
 .project-links {
   display: flex;
@@ -79,24 +110,23 @@ body {
 
 .card a {height: 100%;}
 
-.card a:hover i {background-color:white;}
-
-.project-links a:hover::after {
-  display: block;
-  position: absolute;
-  color: red;
+.card a:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: 1; 
 }
 
-.project-links a:nth-child(1):hover::after {
-  left: 50%;
-  transform: translate(-110%, .55rem);
-  content: "Project code";
-}
-
-.project-links a:nth-child(2):hover::after {
-  left: 50%;
-  transform: translate(10%, .25rem);
-  content: "Project Link";
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
 .card i {
@@ -108,6 +138,7 @@ body {
 .card img {
   width: 100%;
   max-width: 3rem;
+  background-color: white;
 }
 
 .card h2 {text-align: center;}
@@ -146,9 +177,11 @@ body {
 /* pathfinder interactive progress */
 .card:hover:nth-child(1) .progress-value {width: 80%;}
 
-.card:hover .progress-value {
-  background-image: linear-gradient(to bottom, #ACF1FF, #0290EE);
-}
+/* changet the color of the progress bar */
+.card:hover:nth-child(4n+1) .progress-value {background-image: linear-gradient(to bottom, #88FFD1, #2BC4A2);}
+.card:hover:nth-child(4n+2) .progress-value {background-image: linear-gradient(to bottom, #ACF1FF, #0290EE);}
+.card:hover:nth-child(4n+3) .progress-value {background-image: linear-gradient(to bottom,#D9BFFF, #582ACB);}
+.card:hover:nth-child(4n+4) .progress-value {background-image: linear-gradient(to bottom,#FFD567, #FF7139);}
 
 /* carlos-castillo-portfolio v2 progress */
 .card:hover:nth-child(2) .progress-value {width: 40%;}

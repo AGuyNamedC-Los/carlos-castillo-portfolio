@@ -104,7 +104,7 @@ function App() {
                 <h1>Tree Data Structure</h1>
                 <p>
                   A c++ tree that features basic tree funtions as well as different methods of 
-                  search functions like BFS and DFS to traverse through the tree
+                  search functions like BFS and DFS
                 </p>
               </header>
               <div className="project-links">
@@ -114,6 +114,8 @@ function App() {
               <div className="tools">
                 <span>C++</span>
                 <span>iterative</span>
+                <spam style={{visibility: "hidden"}}>dummy</spam>
+                <spam style={{visibility: "hidden"}}>dummy</spam>
               </div>
               <h2>Completion: 100%</h2>
               <div className="progress" data-value="100%">
@@ -135,6 +137,8 @@ function App() {
               <div className="tools">
                 <span>C++</span>
                 <span>iterative</span>
+                <spam style={{visibility: "hidden"}}>dummy</spam>
+                <spam style={{visibility: "hidden"}}>dummy</spam>
               </div>
               <h2>Completion: 100%</h2>
               <div className="progress" data-value="100%">
@@ -181,6 +185,9 @@ function App() {
               <h2>Using</h2>
               <div className="tools">
                 <span>Lisp</span>
+                <spam style={{visibility: "hidden"}}>dummy</spam>
+                <spam style={{visibility: "hidden"}}>dummy</spam>
+                <spam style={{visibility: "hidden"}}>dummy</spam>
               </div>
               <h2>Completion: 100%</h2>
               <div className="progress" data-value="100%">
