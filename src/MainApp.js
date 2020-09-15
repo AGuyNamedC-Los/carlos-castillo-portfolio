@@ -1,4 +1,5 @@
 import React from "react";
+import bitmoji from "./images/bitmoji.png";
 
 class MainApp extends React.Component {
     constructor(props) {
@@ -29,7 +30,7 @@ class MainApp extends React.Component {
             var remaining = Math.max((endTime - now) / duration, 0);
             var value = Math.round(end - (remaining * range));
             obj.innerHTML = "Completion: " + value + "%";
-            if (value == end) {
+            if (value === end) {
                 clearInterval(timer);
             }
         }
@@ -55,6 +56,17 @@ class MainApp extends React.Component {
                   Learn React
                 </a>
               </header> */}
+                <section className="bio">
+                    <img src={bitmoji} alt="bitmoji"></img>
+                    <h1>Carlos Castillo</h1>
+                    <p>Hello, I'm currently looking for a position in software engineering after having graduated from
+                        California State University East Bay this past May with a Bachelors in Computer Science.
+                    </p>
+                    <p>Please visit the links below to see more of my critera and work</p>
+                    <nav>
+                        <a></a>
+                    </nav>
+                </section>
                 <h1>Projects</h1>
                 <section className="card-list">
                   {/* Pathfinder Interactive */}
@@ -113,8 +125,8 @@ class MainApp extends React.Component {
                       <header>
                         <h1>Gift-ee</h1>
                         <p>
-                          Second iteration of my personal portfolio website containing links to all 
-                          my work, criteria, and social media
+                            Social media-esque website that lets you manage one 
+				            gift list and can include items from any number of online stores
                         </p>
                       </header>
                       <div className="project-links">
