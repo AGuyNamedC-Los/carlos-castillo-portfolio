@@ -1,6 +1,10 @@
 import React from "react";
 import bitmoji from "./images/bitmoji.png";
 import github from "./images/github.png";
+import home from "./images/home-run.png";
+import linkedin from "./images/linkedin.png";
+import resume from "./images/resume.png";
+import projects from "./images/project.png";
 
 class MainApp extends React.Component {
     constructor(props) {
@@ -11,13 +15,17 @@ class MainApp extends React.Component {
 
     buttonPress(index) {
         let menuButtons = document.getElementsByClassName("menu")[0].children;
+        let menuButtonImage = document.getElementsByClassName("menu_icon");
         for(let i = 0; i < menuButtons.length; i++) {
             menuButtons[i].style.boxShadow = "inset 0 20px 4px -21px rgba(255,255,255,0.4), 0 19px 13px 0 rgba(0,0,0,0.3)";
-            menuButtons[i].style.backgroundImage = "linear-gradient(to top, #242424 0%, #303030 100%)";
+            // menuButtonImage[i].style.backgroundImage = "linear-gradient(to top, #242424 0%, #303030 100%)";
+            menuButtonImage[i].style.backgroundImage = "";
+            menuButtonImage[i].style.boxShadow = "";
         }
 
-        menuButtons[index].style.boxShadow = "inset 0 16px 14px -21px transparent, 0 0px 13px 0 rgba(0,0,0,0.3), inset 0 0 7px 2px rgba(0,0,0,0.4)";
-        menuButtons[index].style.backgroundImage = "radial-gradient(circle 30px at center, #ebf7ff 0%, #b3e1ff 47%, #b3e1ff 100%)";
+        menuButtons[index].style.boxShadow = "inset 0 16px 14px -21px transparent, 0 0px 13px 0 rgba(0,0,0,0.3), inset 0 0 7px 2px rgba(0,0,0,3)";
+        menuButtonImage[index].style.backgroundImage = "radial-gradient(circle 20px at center, #ebf7ff 0%, #b3e1ff 50%, #b3e1ff 100%)";
+        menuButtonImage[index].style.boxShadow = "0px 0px 20px #ebf7ff";
     }
 
     animateValue(index, start, end, duration) {
@@ -55,10 +63,20 @@ class MainApp extends React.Component {
     render() {
         return (
             <div className="App">
+                <p id="bio" style={{visibility: "hidden"}}>hi</p>   {/* simple for scrolling up purposes */}
+                {/*------------------------------------
+                    menu
+                ------------------------------------*/}
+                <div className="menu">
+                    <a href="#bio" onClick={this.buttonPress.bind(this, 0)}><img className="menu_icon" src={home}></img></a>
+                    <a onClick={this.buttonPress.bind(this, 1)}><img className="menu_icon" src={resume}></img></a>
+                    <a onClick={this.buttonPress.bind(this, 2)}><img className="menu_icon" src={linkedin}></img></a>
+                    <a href="https://github.com/AGuyNamedC-Los" target="_blank" rel="noopener noreferrer" onClick={this.buttonPress.bind(this, 3)}><img className="menu_icon" src={github}></img></a>
+                    <a onClick={this.buttonPress.bind(this, 4)}><img className="menu_icon" src={projects}></img></a>
+                </div>
                 {/*------------------------------------ 
                     bio section 
                 ------------------------------------*/}
-                <p id="bio" style={{visibility: "hidden"}}>hi</p>   {/* simple for scrolling up purposes */}
                 <section className="bio">
                     <img src={bitmoji} alt="bitmoji"></img>
                     <h1>Carlos Castillo</h1>
@@ -68,15 +86,6 @@ class MainApp extends React.Component {
                     </p>
                     <p>Please visit the links below to see more of my critera and work</p>
                 </section>
-                {/*------------------------------------
-                    menu
-                ------------------------------------*/}
-                <div className="menu">
-                    <a href="#bio" onClick={this.buttonPress.bind(this, 0)}><img src={github}></img></a>
-                    <a onClick={this.buttonPress.bind(this, 1)}><img src={github}></img></a>
-                    <a href="https://github.com/AGuyNamedC-Los" target="_blank" rel="noopener noreferrer" onClick={this.buttonPress.bind(this, 2)}><img src={github}></img></a>
-                    <a onClick={this.buttonPress.bind(this, 3)}><img src={github}></img></a>
-                </div>
                 {/*------------------------------------
                     project section 
                 ------------------------------------*/}
