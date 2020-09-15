@@ -1,10 +1,23 @@
 import React from "react";
 import bitmoji from "./images/bitmoji.png";
+import github from "./images/github.png";
 
 class MainApp extends React.Component {
     constructor(props) {
         super (props);
         this.animateValue = this.animateValue.bind(this);
+        this.buttonPress = this.buttonPress.bind(this);
+    }
+
+    buttonPress(index) {
+        let menuButtons = document.getElementsByClassName("menu")[0].children;
+        for(let i = 0; i < menuButtons.length; i++) {
+            menuButtons[i].style.boxShadow = "inset 0 20px 4px -21px rgba(255,255,255,0.4), 0 19px 13px 0 rgba(0,0,0,0.3)";
+            menuButtons[i].style.backgroundImage = "linear-gradient(to top, #242424 0%, #303030 100%)";
+        }
+
+        menuButtons[index].style.boxShadow = "inset 0 16px 14px -21px transparent, 0 0px 13px 0 rgba(0,0,0,0.3), inset 0 0 7px 2px rgba(0,0,0,0.4)";
+        menuButtons[index].style.backgroundImage = "radial-gradient(circle 30px at center, #ebf7ff 0%, #b3e1ff 47%, #b3e1ff 100%)";
     }
 
     animateValue(index, start, end, duration) {
@@ -42,31 +55,31 @@ class MainApp extends React.Component {
     render() {
         return (
             <div className="App">
-              {/* <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                  Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                  className="App-link"
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Learn React
-                </a>
-              </header> */}
+                {/*------------------------------------ 
+                    bio section 
+                ------------------------------------*/}
+                <p id="bio" style={{visibility: "hidden"}}>hi</p>   {/* simple for scrolling up purposes */}
                 <section className="bio">
                     <img src={bitmoji} alt="bitmoji"></img>
                     <h1>Carlos Castillo</h1>
-                    <p>Hello, I'm currently looking for a position in software engineering after having graduated from
+                    <p>
+                        Hello, I'm currently looking for a position in software engineering after having graduated from
                         California State University East Bay this past May with a Bachelors in Computer Science.
                     </p>
                     <p>Please visit the links below to see more of my critera and work</p>
-                    <nav>
-                        <a></a>
-                    </nav>
                 </section>
+                {/*------------------------------------
+                    menu
+                ------------------------------------*/}
+                <div className="menu">
+                    <a href="#bio" onClick={this.buttonPress.bind(this, 0)}><img src={github}></img></a>
+                    <a onClick={this.buttonPress.bind(this, 1)}><img src={github}></img></a>
+                    <a href="https://github.com/AGuyNamedC-Los" target="_blank" rel="noopener noreferrer" onClick={this.buttonPress.bind(this, 2)}><img src={github}></img></a>
+                    <a onClick={this.buttonPress.bind(this, 3)}><img src={github}></img></a>
+                </div>
+                {/*------------------------------------
+                    project section 
+                ------------------------------------*/}
                 <h1>Projects</h1>
                 <section className="card-list">
                   {/* Pathfinder Interactive */}
@@ -105,7 +118,7 @@ class MainApp extends React.Component {
                       </header>
                       <div className="project-links">
                         <a href="https://github.com/AGuyNamedC-Los/carlos-castillo-portfolio" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-square"></i></a>
-                        <a href="https://carlos-castillo-portfolio.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/AGuyNamedC-Los/personal-website/master/public/bitmoji.png" alt="pathfinder interactive"></img></a>
+                        <a href="https://carlos-castillo-portfolio.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img src={bitmoji} alt="pathfinder interactive"></img></a>
                       </div>
                       <h2>Using</h2>
                       <div className="tools">
@@ -204,7 +217,7 @@ class MainApp extends React.Component {
                       </header>
                       <div className="project-links">
                       <a href="https://github.com/AGuyNamedC-Los/personal-website" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-square"></i></a>
-                        <a href="https://serene-wildwood-73140.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/AGuyNamedC-Los/personal-website/master/public/bitmoji.png" alt="pathfinder interactive"></img></a>
+                        <a href="https://serene-wildwood-73140.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img src={bitmoji} alt="pathfinder interactive"></img></a>
                       </div>
                       <h2>Using</h2>
                       <div className="tools">
@@ -243,6 +256,10 @@ class MainApp extends React.Component {
                       </div>
                   </article>
                 </section>
+                {/*------------------------------------
+                    contact me section 
+                ------------------------------------*/}   
+                <h1>Contact Me</h1>
             </div>
           );
     }
