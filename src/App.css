@@ -174,8 +174,7 @@ body {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
 }
 
-/* pathfinder interactive progress */
-.card:hover:nth-child(1) .progress-value {width: 80%;}
+
 
 /* changet the color of the progress bar */
 .card:hover:nth-child(4n+1) .progress-value {background-image: linear-gradient(to bottom, #88FFD1, #2BC4A2);}
@@ -183,15 +182,11 @@ body {
 .card:hover:nth-child(4n+3) .progress-value {background-image: linear-gradient(to bottom,#D9BFFF, #582ACB);}
 .card:hover:nth-child(4n+4) .progress-value {background-image: linear-gradient(to bottom,#FFD567, #FF7139);}
 
-/* carlos-castillo-portfolio v2 progress */
-.card:hover:nth-child(2) .progress-value {width: 40%;}
-
-.card:hover:nth-child(3) .progress-value {width: 35%;}
-
+/* progress bar lengths */
+.card:hover:nth-child(1) .progress-value {width: 80%;}  /* pathfinder interactive */
+.card:hover:nth-child(2) .progress-value {width: 40%;}  /* carlos-castillo-portfolio v2 */
+.card:hover:nth-child(3) .progress-value {width: 35%;}  /* gift-ee */
 .card:hover:nth-child(4) .progress-value {width: 100%;}
-
 .card:hover:nth-child(5) .progress-value {width: 100%;}
-
 .card:hover:nth-child(6) .progress-value {width: 100%;}
-
 .card:hover:nth-child(7) .progress-value {width: 100%;}
