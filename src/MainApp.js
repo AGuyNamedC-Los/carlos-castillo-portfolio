@@ -5,12 +5,14 @@ import home from "./images/home-run.png";
 import linkedin from "./images/linkedin.png";
 import resume from "./images/resume.png";
 import projects from "./images/project.png";
+import contactMe from "./images/mail.png";
 
 class MainApp extends React.Component {
     constructor(props) {
         super (props);
         this.animateValue = this.animateValue.bind(this);
         this.buttonPress = this.buttonPress.bind(this);
+        this.state = {myEmail: "closcastillo95@gmail.com"};
     }
 
     buttonPress(index) {
@@ -18,28 +20,24 @@ class MainApp extends React.Component {
         let menuButtonImage = document.getElementsByClassName("menu_icon");
         for(let i = 0; i < menuButtons.length; i++) {
             menuButtons[i].style.boxShadow = "inset 0 20px 4px -21px rgba(255,255,255,0.4), 0 19px 13px 0 rgba(0,0,0,0.3)";
+            menuButtons[i].style.backgroundImage = "";
             // menuButtonImage[i].style.backgroundImage = "linear-gradient(to top, #242424 0%, #303030 100%)";
             menuButtonImage[i].style.backgroundImage = "";
             menuButtonImage[i].style.boxShadow = "";
         }
 
+        menuButtons[index].style.backgroundImage = "linear-gradient(to top, #151515 0%, #1d1d1d 100%)";
         menuButtons[index].style.boxShadow = "inset 0 16px 14px -21px transparent, 0 0px 13px 0 rgba(0,0,0,0.3), inset 0 0 7px 2px rgba(0,0,0,3)";
-        menuButtonImage[index].style.backgroundImage = "radial-gradient(circle 20px at center, #ebf7ff 0%, #b3e1ff 50%, #b3e1ff 100%)";
-        menuButtonImage[index].style.boxShadow = "0px 0px 20px #ebf7ff";
+        menuButtonImage[index].style.backgroundImage = "radial-gradient(circle 10px at center, #ebf7ff 0%, #b3e1ff 50%, #b3e1ff 100%)";
+        menuButtonImage[index].style.boxShadow = "0px 0px 10px #ebf7ff";
     }
 
-    animateValue(index, start, end, duration) {
-        // assumes integer values for start and end
-        
+    animateValue(index, start, end, duration) {        
         var obj = document.getElementsByClassName("completion")[index];
-        var range = end - start;
-        // no timer shorter than 50ms (not really visible any way)
-        var minTimer = 50;
-        // calc step time to show all interediate values
-        var stepTime = Math.abs(Math.floor(duration / range));
-        
-        // never go below minTimer
-        stepTime = Math.max(stepTime, minTimer);
+        var range = end - start;    
+        var minTimer = 50;  // no timer shorter than 50ms (not really visible any way)
+        var stepTime = Math.abs(Math.floor(duration / range));  // calc step time to show all interediate values
+        stepTime = Math.max(stepTime, minTimer);    // never go below minTimer
         
         // get current time and calculate desired end time
         var startTime = new Date().getTime();
@@ -63,23 +61,24 @@ class MainApp extends React.Component {
     render() {
         return (
             <div className="App">
-                <p id="bio" style={{visibility: "hidden"}}>hi</p>   {/* simple for scrolling up purposes */}
+                <p id="top-of-page" style={{visibility: "hidden"}}>hi</p>   {/* simple for scrolling up purposes */}
                 {/*------------------------------------
                     menu
                 ------------------------------------*/}
                 <div className="menu">
-                    <a href="#bio" onClick={this.buttonPress.bind(this, 0)}><img className="menu_icon" src={home}></img></a>
-                    <a onClick={this.buttonPress.bind(this, 1)}><img className="menu_icon" src={resume}></img></a>
-                    <a onClick={this.buttonPress.bind(this, 2)}><img className="menu_icon" src={linkedin}></img></a>
-                    <a href="https://github.com/AGuyNamedC-Los" target="_blank" rel="noopener noreferrer" onClick={this.buttonPress.bind(this, 3)}><img className="menu_icon" src={github}></img></a>
-                    <a onClick={this.buttonPress.bind(this, 4)}><img className="menu_icon" src={projects}></img></a>
+                    <a className="menu-button" href="#top-of-page" onClick={this.buttonPress.bind(this, 0)}><img className="menu_icon" src={home} alt="home"></img></a>
+                    <a className="menu-button" href="https://docs.google.com/document/d/1K-3VK16w9j0yWRLB88lPVZMlzlR8DVcQ9ZDwyTef5oM/edit" target="_blank" rel="noopener noreferrer" onClick={this.buttonPress.bind(this, 1)}><img className="menu_icon" src={resume} alt="resume"></img></a>
+                    <a className="menu-button" href="https://www.linkedin.com/in/carlos-castillo-1363a6133/" target="_blank" rel="noopener noreferrer" onClick={this.buttonPress.bind(this, 2)}><img className="menu_icon" src={linkedin} alt="linkedin"></img></a>
+                    <a className="menu-button" href="https://github.com/AGuyNamedC-Los" target="_blank" rel="noopener noreferrer" onClick={this.buttonPress.bind(this, 3)}><img className="menu_icon" src={github} alt="github"></img></a>
+                    <a className="menu-button" href="#projects" onClick={this.buttonPress.bind(this, 4)}><img className="menu_icon" src={projects} alt="projects"></img></a>
+                    <a className="menu-button" href="#contact-me" onClick={this.buttonPress.bind(this, 5)}><img className="menu_icon" src={contactMe} alt="contact me"></img></a>
                 </div>
                 {/*------------------------------------ 
                     bio section 
                 ------------------------------------*/}
                 <section className="bio">
                     <img src={bitmoji} alt="bitmoji"></img>
-                    <h1>Carlos Castillo</h1>
+                    <h1>I'm Carlos Castillo</h1>
                     <p>
                         Hello, I'm currently looking for a position in software engineering after having graduated from
                         California State University East Bay this past May with a Bachelors in Computer Science.
@@ -89,6 +88,7 @@ class MainApp extends React.Component {
                 {/*------------------------------------
                     project section 
                 ------------------------------------*/}
+                <h1 id="projects" style={{visibility: "hidden"}}>Projects</h1>
                 <h1>Projects</h1>
                 <section className="card-list">
                   {/* Pathfinder Interactive */}
@@ -117,7 +117,7 @@ class MainApp extends React.Component {
                       </div>
                   </article>
                   {/* Portfolio Website v2 */}
-                  <article className="card" onMouseEnter={this.animateValue.bind(this, 1, 0, 40, 1000)}>
+                  <article className="card" onMouseEnter={this.animateValue.bind(this, 1, 0, 75, 1000)}>
                       <header>
                         <h1>Portfolio Website v2</h1>
                         <p>
@@ -138,7 +138,7 @@ class MainApp extends React.Component {
                         <span>CSS</span>
                       </div>
                       <h2 className="completion">Completion: ...%</h2>
-                      <div className="progress" data-value="40%">
+                      <div className="progress" data-value="75%">
                         <div className="progress-value"></div>
                       </div>
                   </article>
@@ -267,10 +267,22 @@ class MainApp extends React.Component {
                 </section>
                 {/*------------------------------------
                     contact me section 
-                ------------------------------------*/}   
+                ------------------------------------*/}
+                <h1 id="contact-me" style={{visibility: "hidden"}}>Contact Me</h1>   
                 <h1>Contact Me</h1>
+                <section className="card-list contact-me">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=closcastillo95@gmail.com" target="_blank" className="card email-option">
+                        <h2>Email Me (GMail)</h2>
+                    </a>
+                    <a className="card email-option" href="mailto:closcastillo95@gmail.com">
+                        <h2>Email Me (default)</h2>
+                    </a>
+                    <article className="card email-option" onClick={() => {navigator.clipboard.writeText(this.state.myEmail)}}>
+                        <h2>Copy my Email to clipboard</h2>
+                    </article>
+                </section>
             </div>
-          );
+        );
     }
 }
 

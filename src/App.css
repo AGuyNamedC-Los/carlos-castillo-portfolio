@@ -31,6 +31,10 @@ body {
   background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
 } */
 
+#projects, #contact-me {
+  margin-bottom: 130px;
+  margin-top: 600px;
+}
 
 /*-------------------------
   bio card 
@@ -71,46 +75,30 @@ body {
   Menu  
 -------------------------*/
 
-/* .menu {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  max-width: 600px;
-  margin: 0 auto;
-  height: 100px;
-  background-color: #000;
-  border-radius: 7px;
-  padding: 4px;
-}
-
-.menu a {
-  cursor: pointer;
-  flex: 1;
-  background-image: linear-gradient(to top, #242424 0%, #303030 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1px;
-  transition: 0.2s;
-  font-size: 2.5em;
-  box-shadow: inset 0 20px 4px -21px rgba(255,255,255,0.4), 0 19px 13px 0 rgba(0,0,0,0.3);
-  color: #181818;
-  position: relative;
-  z-index: 2;
-} */
-
 .menu {
   cursor: pointer;
   display: flex;
   border-radius: 7px;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   margin: auto auto;
   padding: 5px;
   background-color: black;
   height: 100px;
   border-radius: 7px;
 }
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0%);
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .bio { margin-top: 200px;} /* double the size of the menu's height */
 
 .menu a {
   background-image: linear-gradient(to top, #242424 0%, #303030 100%);
@@ -121,18 +109,26 @@ body {
   margin: 1px;
   transition: .2s;
   box-shadow: inset 0 20px 4px -21px rgba(255,255,255,0.4), 0 19px 13px 0 rgba(0,0,0,0.3);
-
-  /* background-image: radial-gradient(circle 30px at center, #ebf7ff 0%, #b3e1ff 47%, #b3e1ff 100%); */
 }
 
 .menu img {
   user-select: none;
   width: 100%;
   max-width: 50px;
-  border-radius: 10px;
-  /* padding: 10px; */
-  /* box-shadow: 0px 0px 30px #ebf7ff; */
-  /* box-shadow: inset 0 16px 14px -21px transparent, 0 0px 13px 0 rgba(0,0,0,0.3), inset 0 0 7px 2px rgba(0,0,0,0.4); */
+  border-radius: 16px;
+}
+
+.menu a::before {
+  content: "";
+  display: block;
+  width: 0.8em;
+  height: 0.8em;
+  transition: 0.1s;
+  background-image: radial-gradient(circle 10px at center, #ebf7ff 0%, #b3e1ff 47%, #b3e1ff 100%);
+  position: absolute;
+  filter: blur(8px);
+  padding: 3px;
+  border-radius: 50%;
 }
 
 h1 {text-align: center;}  /* title of each section */
@@ -297,9 +293,26 @@ h1 {text-align: center;}  /* title of each section */
 
 /* progress bar lengths */
 .card:hover:nth-child(1) .progress-value {width: 80%;}  /* pathfinder interactive */
-.card:hover:nth-child(2) .progress-value {width: 40%;}  /* carlos-castillo-portfolio v2 */
+.card:hover:nth-child(2) .progress-value {width: 75%;}  /* carlos-castillo-portfolio v2 */
 .card:hover:nth-child(3) .progress-value {width: 35%;}  /* gift-ee */
 .card:hover:nth-child(4) .progress-value {width: 100%;}
 .card:hover:nth-child(5) .progress-value {width: 100%;}
 .card:hover:nth-child(6) .progress-value {width: 100%;}
 .card:hover:nth-child(7) .progress-value {width: 100%;}
+
+/*-------------------------
+  contact me cards 
+-------------------------*/
+.card-list.contact-me {
+  justify-content: center;
+  margin-bottom: 600px;
+}
+
+.card.email-option {
+  user-select: none;
+  text-decoration: none; 
+  color: white;
+  justify-content: center;
+  height: 200px;
+  cursor: pointer;
+}
