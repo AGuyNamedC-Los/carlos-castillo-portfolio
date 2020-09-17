@@ -30,15 +30,55 @@ class ProjectList extends React.Component {
                     completionPercentage: "80"
                 }}/>
                 <ProjectCard cardInfo={{
-                index: "0",
-                projectName: "",
-                projectDescription: "",
-                githubProjectURL: "",
-                projectURL: "",
-                projectIMG_URL: "",
-                tools: [],
-                completionPercentage: ""
+                    index: "2",
+                    projectName: "Gift-ee",
+                    projectDescription: "Social media-esque website that lets you manage one gift list and can include items from any number of online stores",
+                    githubProjectURL: "https://github.com/AGuyNamedC-Los/gift-ee",
+                    projectURL: "https://tranquil-fjord-29285.herokuapp.com/",
+                    projectIMG_URL: "https://raw.githubusercontent.com/AGuyNamedC-Los/carlos-castillo-portfolio/master/src/images/gift.png",
+                    tools: ["Javascript", "Nunjucks", "Heroku", "HTML5", "CSS3"],
+                    completionPercentage: "35"
                 }}/>
+                <ProjectCard cardInfo={{
+                    index: "3",
+                    projectName: "Tree Data Structure",
+                    projectDescription: "A c++ tree that features basic tree funtions as well as different methods of search functions like BFS and DFS",
+                    githubProjectURL: "https://github.com/AGuyNamedC-Los/data_structures/tree/master/BasicTree",
+                    projectURL: "",
+                    projectIMG_URL: "",
+                    tools: ["c++", "iterative", "dummy"],
+                    completionPercentage: "100"
+                }}/>
+                <ProjectCard cardInfo={{
+                    index: "4",
+                    projectName: "Doubly Linked List Data Structure",
+                    projectDescription: "A c++ doubly linked list that features basic linked list funtions",
+                    githubProjectURL: "https://github.com/AGuyNamedC-Los/data_structures/tree/master/DoublyLinkedList",
+                    projectURL: "",
+                    projectIMG_URL: "",
+                    tools: ["C++", "iterative", "dummy"],
+                    completionPercentage: "100"
+                }}/>
+                <ProjectCard cardInfo={{
+                    index: "5",
+                    projectName: "Portfolio Website v1",
+                    projectDescription: "This was my first iteration of a portfolio website, it has since been depricated and will no longer receive any updates",
+                    githubProjectURL: "https://github.com/AGuyNamedC-Los/personal-website",
+                    projectURL: "https://serene-wildwood-73140.herokuapp.com/",
+                    projectIMG_URL: "https://raw.githubusercontent.com/AGuyNamedC-Los/carlos-castillo-portfolio/master/src/images/bitmoji.png",
+                    tools: ["Javascript", "React", "Heroku", "HTML5", "CSS3"],
+                    completionPercentage: "100"
+                }}/>
+                <ProjectCard cardInfo={{
+                    index: "6",
+                    projectName: "Connect-3",
+                    projectDescription: "Single player game of connect-3 against a Lisp based AI",
+                    githubProjectURL: "https://github.com/AGuyNamedC-Los/connect-3",
+                    projectURL: "",
+                    projectIMG_URL: "",
+                    tools: ["Lisp", "dummy", "dummy"],
+                    completionPercentage: "100"
+                }}/> 
             </section>
         );
     }
@@ -47,14 +87,14 @@ class ProjectList extends React.Component {
 export default ProjectList
 
 {/* 
-    <ProjectCard cardInfo={{
-        index: "0",
-        projectName: "",
-        projectDescription: "",
-        githubProjectURL: "",
-        projectURL: "",
-        projectIMG_URL: "",
-        tools: [],
-        completionPercentage: ""
-    }}/> 
+<ProjectCard cardInfo={{
+    index: "",
+    projectName: "",
+    projectDescription: "",
+    githubProjectURL: "",
+    projectURL: "",
+    projectIMG_URL: "",
+    tools: [],
+    completionPercentage: ""
+}}/> 
 */}

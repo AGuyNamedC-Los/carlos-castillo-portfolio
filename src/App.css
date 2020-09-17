@@ -36,6 +36,8 @@ body {
   margin-top: 600px;
 }
 
+h1 {text-align: center;}
+
 /*-------------------------
   bio card 
 -------------------------*/
@@ -95,6 +97,7 @@ body {
   left: 50%;
   top: 0;
   transform: translate(-50%, 0%);
+  margin: auto auto;
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
@@ -118,29 +121,57 @@ body {
   border-radius: 16px;
 }
 
-.menu a::before {
+.menu-button::before {
   content: "";
   display: block;
   width: 0.8em;
   height: 0.8em;
   transition: 0.1s;
-  background-image: radial-gradient(circle 10px at center, #ebf7ff 0%, #b3e1ff 47%, #b3e1ff 100%);
+  /* background-image: radial-gradient(circle 10px at center, #ebf7ff 0%, #b3e1ff 47%, #b3e1ff 100%); */
   position: absolute;
-  filter: blur(8px);
+  filter: blur(5px);
   padding: 3px;
   border-radius: 50%;
 }
+
+.menu-button:hover::after {
+  color: white;
+  padding: 1rem 0rem;
+  display: block;
+  text-align: center;
+
+  width: 100%;
+  max-width: 8rem;
+  position: absolute;
+  transform: translateY(90px);
+  box-shadow: inset 0 20px 4px -21px rgba(255,255,255,0.4), 0 19px 13px 0 rgba(0,0,0,0.3);
+  background-image: linear-gradient(to top, #242424 0%, #303030 100%);
+  /* box-shadow: 1rem 0rem 1rem  #7358b3, -1rem 0rem 1rem #7358b3; */
+}
+
+/* drop down text on menu button hover */
+.menu-button:nth-child(1):hover::after {content: "Home";}
+.menu-button:nth-child(2):hover::after {content: "Resume"}
+.menu-button:nth-child(3):hover::after {content: "Linkedin"}
+.menu-button:nth-child(4):hover::after {content: "Github"}
+.menu-button:nth-child(5):hover::after {content: "Projects"}
+.menu-button:nth-child(6):hover::after {content: "Contact Me"}
+
+/* changing the shadow color of the drop down button text on hover */
+.menu-button:nth-child(4n+1):hover::after {box-shadow: 1rem 0rem 1rem #2BC4A2, -1rem 0rem 1rem #2BC4A2;}
+.menu-button:nth-child(4n+2):hover::after {box-shadow: 1rem 0rem 1rem #0290EE, -1rem 0rem 1rem #0290EE;}
+.menu-button:nth-child(4n+3):hover::after {box-shadow: 1rem 0rem 1rem #582ACB, -1rem 0rem 1rem #582ACB;}
+.menu-button:nth-child(4n+4):hover::after {box-shadow: 1rem 0rem 1rem #FF7139, -1rem 0rem 1rem#FF7139;}
 
 h1 {text-align: center;}  /* title of each section */
 
 /*-------------------------
   project cards  
 -------------------------*/
-
 .card-list {
   display: flex;
   margin: 0rem auto;
-  padding: 3rem 3rem;
+  padding: 4rem 3rem;
   overflow-x: auto;
   width: 100%;
   max-width: 95%;
@@ -149,6 +180,7 @@ h1 {text-align: center;}  /* title of each section */
 .card {
   display: flex;
   flex-direction: column;
+  position: relative;
   border-radius: 16px;
   height: 29rem;
   max-width: 20rem;
@@ -166,6 +198,12 @@ h1 {text-align: center;}  /* title of each section */
 .card:not(:first-child) {margin-left: -5rem;} /* to make it appear as if the cards are overrlapping each other */
 .card header, .card i {transition: .75s;}  
 
+/* changing the shadow color of the card on hover */
+.card:hover:nth-child(4n+1) {box-shadow: 1rem .5rem 2rem #2BC4A2, -1rem .5rem 2rem #2BC4A2;}
+.card:hover:nth-child(4n+2) {box-shadow: 1rem .5rem 2rem #0290EE, -1rem .5rem 2rem #0290EE;}
+.card:hover:nth-child(4n+3) {box-shadow: 1rem .5rem 2rem #582ACB, -1rem .5rem 2rem #582ACB;}
+.card:hover:nth-child(4n+4) {box-shadow: 1rem .5rem 2rem #FF7139, -1rem .5rem 2rem#FF7139;}
+
 /* changing the color text of each card */
 .card:hover:nth-child(4n+1) header, 
 .card:hover:nth-child(4n+1) h2, 
@@ -180,7 +218,7 @@ h1 {text-align: center;}  /* title of each section */
 .card:hover:nth-child(4n+2) header, 
 .card:hover:nth-child(4n+2) h2, 
 .card:hover:nth-child(4n+2) .tools span {
-  background: linear-gradient(90deg, #ACF1FF, #0290EE );
+  background: linear-gradient(90deg, #ACF1FF, #0290EE);
   text-shadow: none;
   background-clip: text;
   -webkit-background-clip: text;
@@ -214,6 +252,9 @@ h1 {text-align: center;}  /* title of each section */
   display: flex;
   justify-content: space-around;
 }
+
+.project-links img,
+.project-links i {vertical-align: bottom; border-radius: 5px;}
 
 .card a {height: 100%;}
 
@@ -305,7 +346,7 @@ h1 {text-align: center;}  /* title of each section */
 -------------------------*/
 .card-list.contact-me {
   justify-content: center;
-  margin-bottom: 600px;
+  margin-bottom: 750px;
 }
 
 .card.email-option {

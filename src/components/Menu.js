@@ -15,18 +15,26 @@ class Menu extends React.Component {
     buttonPress(index) {
         let menuButtons = document.getElementsByClassName("menu")[0].children;
         let menuButtonImage = document.getElementsByClassName("menu_icon");
+        let color;
         for(let i = 0; i < menuButtons.length; i++) {
-            menuButtons[i].style.boxShadow = "inset 0 20px 4px -21px rgba(255,255,255,0.4), 0 19px 13px 0 rgba(0,0,0,0.3)";
-            menuButtons[i].style.backgroundImage = "";
-            // menuButtonImage[i].style.backgroundImage = "linear-gradient(to top, #242424 0%, #303030 100%)";
-            menuButtonImage[i].style.backgroundImage = "";
-            menuButtonImage[i].style.boxShadow = "";
+            if(i == index) {
+                if(i == 0 || i == 4) color =  "#2BC4A2";
+                if(i == 1 || i == 5) color = "#0290EE";
+                if(i == 2) color = "#582ACB";
+                if(i == 3) color = "#FF7139";
+                // if(i % 7 == 0 || i == 3) color = " #FF7139";
+                menuButtons[index].style.backgroundImage = "linear-gradient(to top, #151515 0%, #1d1d1d 100%)";
+                menuButtons[index].style.boxShadow = `inset 0 16px 14px -21px transparent, 0 0px 13px 0 ${color}, inset 0 0 7px 2px ${color}`;
+                menuButtonImage[index].style.backgroundImage = `radial-gradient(circle 10px at center, ${color} 0%, ${color} 50%, ${color} 100%)`;
+                menuButtonImage[index].style.boxShadow = "0px 0px 10px #ebf7ff";
+            } else {
+                // reset the color of the button
+                menuButtons[i].style.boxShadow = "inset 0 20px 4px -21px rgba(255,255,255,0.4), 0 19px 13px 0 rgba(0,0,0,0.3)";
+                menuButtons[i].style.backgroundImage = "";
+                menuButtonImage[i].style.backgroundImage = "";
+                menuButtonImage[i].style.boxShadow = "";
+            }
         }
-
-        menuButtons[index].style.backgroundImage = "linear-gradient(to top, #151515 0%, #1d1d1d 100%)";
-        menuButtons[index].style.boxShadow = "inset 0 16px 14px -21px transparent, 0 0px 13px 0 rgba(0,0,0,0.3), inset 0 0 7px 2px rgba(0,0,0,3)";
-        menuButtonImage[index].style.backgroundImage = "radial-gradient(circle 10px at center, #ebf7ff 0%, #b3e1ff 50%, #b3e1ff 100%)";
-        menuButtonImage[index].style.boxShadow = "0px 0px 10px #ebf7ff";
     }
 
     render() {
