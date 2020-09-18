@@ -1,5 +1,4 @@
 import React from 'react';
-import useCountUp from 'react-countup';
 import CountUp from "./CountUp.js";
 import CountDown from "./CountDown.js"
 
@@ -8,22 +7,13 @@ class ProjectCard extends React.Component {
         super(props);
         // solves formatting issues for the grid
         this.tools = this.props.cardInfo.tools.map(tool => <span style={{visibility: tool === "dummy" ? "hidden": "visible"}}>{tool}</span>)
-        this.state = {
-            isHovering: false,
-            currentProgressVal: 0
-        };
+        this.state = {isHovering: false,};
         this.handleMouseEnter = this.handleMouseEnter.bind(this);
         this.handleMouseLeave = this.handleMouseLeave.bind(this);
     }
 
-    handleMouseEnter() {
-        this.setState({isHovering: true});
-    }
-
-    handleMouseLeave() {
-        this.setState({isHovering: false})
-    }
-
+    handleMouseEnter() {this.setState({isHovering: true});}
+    handleMouseLeave() {this.setState({isHovering: false})}
 
     render() {
         return(
