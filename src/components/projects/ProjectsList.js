@@ -27,7 +27,7 @@ class ProjectList extends React.Component {
                     projectURL: "https://carlos-castillo-portfolio.herokuapp.com/",
                     projectIMG_URL: "https://raw.githubusercontent.com/AGuyNamedC-Los/carlos-castillo-portfolio/master/src/images/bitmoji.png",
                     tools: ["Javascript", "React", "Heroku", "HTML5", "CSS3"],
-                    completionPercentage: 80
+                    completionPercentage: 94
                 }}/>
                 <ProjectCard cardInfo={{
                     index: "2",
