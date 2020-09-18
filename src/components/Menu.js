@@ -17,11 +17,11 @@ class Menu extends React.Component {
         let menuButtonImage = document.getElementsByClassName("menu_icon");
         let color;
         for(let i = 0; i < menuButtons.length; i++) {
-            if(i == index) {
-                if(i == 0 || i == 4) color =  "#2BC4A2";
-                if(i == 1 || i == 5) color = "#0290EE";
-                if(i == 2) color = "#582ACB";
-                if(i == 3) color = "#FF7139";
+            if(i === index) {
+                if(i === 0 || i === 4) color =  "#2BC4A2";
+                if(i === 1 || i === 5) color = "#0290EE";
+                if(i === 2) color = "#582ACB";
+                if(i === 3) color = "#FF7139";
                 // if(i % 7 == 0 || i == 3) color = " #FF7139";
                 menuButtons[index].style.backgroundImage = "linear-gradient(to top, #151515 0%, #1d1d1d 100%)";
                 menuButtons[index].style.boxShadow = `inset 0 16px 14px -21px transparent, 0 0px 13px 0 ${color}, inset 0 0 7px 2px ${color}`;

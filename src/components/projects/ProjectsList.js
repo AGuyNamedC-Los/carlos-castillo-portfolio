@@ -17,7 +17,7 @@ class ProjectList extends React.Component {
                     projectURL: "https://pathfinder-interactive.herokuapp.com/",
                     projectIMG_URL: "https://raw.githubusercontent.com/AGuyNamedC-Los/pathfinder_interactive/master/path.png",
                     tools: ["Javascript", "Heroku", "HTML5", "CSS3"],
-                    completionPercentage: "80"
+                    completionPercentage: 80
                 }}/>
                 <ProjectCard cardInfo={{
                     index: "1",
@@ -27,7 +27,7 @@ class ProjectList extends React.Component {
                     projectURL: "https://carlos-castillo-portfolio.herokuapp.com/",
                     projectIMG_URL: "https://raw.githubusercontent.com/AGuyNamedC-Los/carlos-castillo-portfolio/master/src/images/bitmoji.png",
                     tools: ["Javascript", "React", "Heroku", "HTML5", "CSS3"],
-                    completionPercentage: "80"
+                    completionPercentage: 80
                 }}/>
                 <ProjectCard cardInfo={{
                     index: "2",
@@ -37,7 +37,7 @@ class ProjectList extends React.Component {
                     projectURL: "https://tranquil-fjord-29285.herokuapp.com/",
                     projectIMG_URL: "https://raw.githubusercontent.com/AGuyNamedC-Los/carlos-castillo-portfolio/master/src/images/gift.png",
                     tools: ["Javascript", "Nunjucks", "Heroku", "HTML5", "CSS3"],
-                    completionPercentage: "35"
+                    completionPercentage: 35
                 }}/>
                 <ProjectCard cardInfo={{
                     index: "3",
@@ -47,7 +47,7 @@ class ProjectList extends React.Component {
                     projectURL: "",
                     projectIMG_URL: "",
                     tools: ["c++", "iterative", "dummy"],
-                    completionPercentage: "100"
+                    completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
                     index: "4",
@@ -57,7 +57,7 @@ class ProjectList extends React.Component {
                     projectURL: "",
                     projectIMG_URL: "",
                     tools: ["C++", "iterative", "dummy"],
-                    completionPercentage: "100"
+                    completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
                     index: "5",
@@ -67,7 +67,7 @@ class ProjectList extends React.Component {
                     projectURL: "https://serene-wildwood-73140.herokuapp.com/",
                     projectIMG_URL: "https://raw.githubusercontent.com/AGuyNamedC-Los/carlos-castillo-portfolio/master/src/images/bitmoji.png",
                     tools: ["Javascript", "React", "Heroku", "HTML5", "CSS3"],
-                    completionPercentage: "100"
+                    completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
                     index: "6",
@@ -77,7 +77,7 @@ class ProjectList extends React.Component {
                     projectURL: "",
                     projectIMG_URL: "",
                     tools: ["Lisp", "dummy", "dummy"],
-                    completionPercentage: "100"
+                    completionPercentage: 100
                 }}/> 
             </section>
         );

@@ -1,51 +1,33 @@
 import React from 'react';
+import useCountUp from 'react-countup';
+import CountUp from "./CountUp.js";
+import CountDown from "./CountDown.js"
 
 class ProjectCard extends React.Component {
     constructor(props)  {
         super(props);
-        this.animateValue = this.animateValue.bind(this);
-        this.resetValue = this.resetValue.bind(this);
         // solves formatting issues for the grid
         this.tools = this.props.cardInfo.tools.map(tool => <span style={{visibility: tool === "dummy" ? "hidden": "visible"}}>{tool}</span>)
-        console.log(this.tools[1]);
+        this.state = {
+            isHovering: false,
+            currentProgressVal: 0
+        };
+        this.handleMouseEnter = this.handleMouseEnter.bind(this);
+        this.handleMouseLeave = this.handleMouseLeave.bind(this);
     }
 
-    animateValue(index, start, end, duration) {        
-        let obj = document.getElementsByClassName("completion")[index];
-        obj.innerHTML = "Completion: ...%";
-        let range = end - start;    
-        let minTimer = 50;  // no timer shorter than 50ms (not really visible any way)
-        let stepTime = Math.abs(Math.floor(duration / range));  // calc step time to show all interediate values
-        stepTime = Math.max(stepTime, minTimer);    // never go below minTimer
-        
-        // get current time and calculate desired end time
-        let startTime = new Date().getTime();
-        let endTime = startTime + duration;
-        let timer;
-      
-        function run() {
-            let now = new Date().getTime();
-            let remaining = Math.max((endTime - now) / duration, 0);
-            let value = Math.round(end - (remaining * range));
-            obj.innerHTML = "Completion: " + value + "%";
-            
-            if (value === end) {clearInterval(timer);}
-        }
-        
-        timer = setInterval(run, stepTime);
-        run();
-      }
+    handleMouseEnter() {
+        this.setState({isHovering: true});
+    }
 
-      resetValue(index) {
-            console.log(index);
-            let obj2 = document.getElementsByClassName("completion")[index];
-            obj2.innerHTML = "Completion: ...%";
-            console.log(obj2.innerHTML);
-      }
+    handleMouseLeave() {
+        this.setState({isHovering: false})
+    }
+
 
     render() {
         return(
-            <article className="card" onMouseEnter={this.animateValue.bind(this, this.props.cardInfo.index, 0, this.props.cardInfo.completionPercentage, 1000)} onMouseLeave={this.resetValue.bind(this, this.props.cardInfo.index)}>
+            <article className="card" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
                 <header>
                     <h1>{this.props.cardInfo['projectName']}</h1>
                     <p>{this.props.cardInfo.projectDescription}</p>        
@@ -65,10 +47,14 @@ class ProjectCard extends React.Component {
                 <div className="tools">
                     {this.tools}
                 </div>
-                <h2 className="completion">Completion: ...%</h2>
-                      <div className="progress">
-                        <div className="progress-value"></div>
-                      </div>
+                {this.state.isHovering ? 
+                    <CountUp currentProgressVal={this.state.currentProgressVal} completionPercentage={this.props.cardInfo.completionPercentage}/> 
+                    : 
+                    <CountDown completionPercentage={this.props.cardInfo.completionPercentage}/>
+                }
+                <div className="progress">
+                    <div className="progress-value"></div>
+                </div>
             </article>
         );
     }
