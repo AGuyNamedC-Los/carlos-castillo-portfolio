@@ -15,18 +15,13 @@ class App extends Component {
   render() {
     return (
       <div>
-        <p id="top-of-page" style={{visibility: "hidden"}}>hi</p>   {/* simply for scrolling up purposes */}
         <Menu />
-        <Bio />
-        <h1 id="projects" style={{visibility: "hidden"}}>Projects</h1>
-        <h1>Projects</h1>
-        <ProjectList />
-        <h1 id="contact-me" style={{visibility: "hidden"}}>Contact Me</h1>   
-        <h1>Contact Me</h1>
-        <ContactMe />
-        {/* <MainApp /> */}
+        <div id="page-content">
+          <div id="slide-1" className="slide slide-1"><Bio /></div>
+          <div id="slide-2" className="slide slide-2"><ProjectList /></div>
+          <div id="slide-3" className="slide slide-3"><ContactMe /></div>
+        </div>
       </div>
-
     );
   }
 }

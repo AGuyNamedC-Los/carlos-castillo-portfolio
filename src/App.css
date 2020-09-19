@@ -4,9 +4,11 @@ body {
   padding: 0;
   margin: 0;
   /* background-color: #17141D; */
-  background-color: #17181A;
+  /* background-color: #17181A; */
   /* background-color:  #1b1724; */
-  background-color:  #110d1b;
+  /* background-color:  #110d1b; */
+  background-color:  #100e17;
+  background-color:  #110e1a;
   color: white;
   font-family: 'DM Mono', monospace;
   overflow-x: hidden;
@@ -31,47 +33,7 @@ body {
   background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
 } */
 
-#projects, #contact-me {
-  margin-bottom: 130px;
-  margin-top: 600px;
-}
-
 h1 {text-align: center;}
-
-/*-------------------------
-  bio card 
--------------------------*/
-.bio {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 550px;
-  max-width: 30rem;
-  margin: 5rem auto;
-  background-color: #131214;
-  border-radius: 16px;
-  box-shadow: 1rem .5rem 2rem #000, -1rem .5rem 2rem #000;
-}
-
-.bio img {
-  width: 100%;
-  border: solid;
-  border-radius: 90px;
-  background-color: white;
-  max-width: 10rem;
-  margin: 0 auto;
-  margin-top: 1rem;
-}
-
-.bio h1, .bio p {
-  text-align: center;
-  font-size: 2rem;
-}
-
-.bio p {
-  padding: 0 1rem;
-  font-size: 1.25rem;
-}
 
 /*-------------------------
   Menu  
@@ -88,24 +50,20 @@ h1 {text-align: center;}
   background-color: black;
   height: 100px;
   border-radius: 7px;
+	position: fixed;
+	left: 0;
+	right: 0;
+  	
+	margin: auto;
+  z-index: 1;
 }
-
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  z-index: 5;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, 0%);
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .bio { margin-top: 200px;} /* double the size of the menu's height */
 
 @media only screen and (max-width: 800px) {
   .menu {
-    max-width: 80%;
+    max-width: 500px;
     max-height: 80px;
+    margin: auto auto;
+    -webkit-backface-visibility: hidden;
   }
 }
 
@@ -164,12 +122,57 @@ h1 {text-align: center;}
 .menu-button:nth-child(6):hover::after {content: "Contact Me"}
 
 /* changing the shadow color of the drop down button text on hover */
-.menu-button:nth-child(4n+1):hover::after {box-shadow: 1rem 0rem 1rem #2BC4A2, -1rem 0rem 1rem #2BC4A2;}
-.menu-button:nth-child(4n+2):hover::after {box-shadow: 1rem 0rem 1rem #0290EE, -1rem 0rem 1rem #0290EE;}
-.menu-button:nth-child(4n+3):hover::after {box-shadow: 1rem 0rem 1rem #582ACB, -1rem 0rem 1rem #582ACB;}
-.menu-button:nth-child(4n+4):hover::after {box-shadow: 1rem 0rem 1rem #FF7139, -1rem 0rem 1rem#FF7139;}
+.menu-button:hover::after {box-shadow: 1rem 0rem 1rem white, -1rem 0rem 1rem white;}
 
-h1 {text-align: center;}  /* title of each section */
+/*-------------------------
+  bio card 
+-------------------------*/
+.bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 550px;
+  max-width: 30rem;
+  margin: 0 auto;
+  background-color: #131214;
+  border-radius: 16px;
+  box-shadow: 1rem .5rem 2rem #000, -1rem .5rem 2rem #000;
+}
+
+.bio img {
+  width: 100%;
+  border: solid;
+  border-radius: 90px;
+  background-color: white;
+  max-width: 10rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.bio h1, .bio p {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.bio p {
+  padding: 0 1rem;
+  font-size: 1.25rem;
+}
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 12px;
+  }
+  
+  /* .bio {
+    max-width: 27rem;
+  }
+
+  .bio p {
+    font-size: .8;
+  } */
+}
 
 /*-------------------------
   project cards  
@@ -350,10 +353,7 @@ h1 {text-align: center;}  /* title of each section */
 /*-------------------------
   contact me cards 
 -------------------------*/
-.card-list.contact-me {
-  justify-content: center;
-  margin-bottom: 750px;
-}
+.card-list.contact-me {justify-content: center;}
 
 .card.email-option {
   user-select: none;
@@ -363,3 +363,22 @@ h1 {text-align: center;}  /* title of each section */
   height: 200px;
   cursor: pointer;
 }
+
+/*-------------------------
+  carousel
+-------------------------*/
+#page-content {
+  width: 300%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.slide {width: 99.7vw;}
+.slide:nth-child(2), .slide:nth-child(3) {visibility: hidden;}

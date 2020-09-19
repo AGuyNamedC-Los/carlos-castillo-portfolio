@@ -5,8 +5,8 @@ import CountDown from "./CountDown.js"
 class ProjectCard extends React.Component {
     constructor(props)  {
         super(props);
-        // solves formatting issues for the grid
-        this.tools = this.props.cardInfo.tools.map(tool => <span style={{visibility: tool === "dummy" ? "hidden": "visible"}}>{tool}</span>)
+        // solves formatting issues of the tools section on each card
+        this.tools = this.props.cardInfo.tools.map(tool => (tool === "") ? <span style={{visibility: "hidden"}}>" "</span> : <span>{tool}</span>);
         this.state = {isHovering: false,};
         this.handleMouseEnter = this.handleMouseEnter.bind(this);
         this.handleMouseLeave = this.handleMouseLeave.bind(this);

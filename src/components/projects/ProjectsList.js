@@ -46,7 +46,7 @@ class ProjectList extends React.Component {
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/data_structures/tree/master/BasicTree",
                     projectURL: "",
                     projectIMG_URL: "",
-                    tools: ["c++", "iterative", "dummy"],
+                    tools: ["c++", "iterative", ""],
                     completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
@@ -56,7 +56,7 @@ class ProjectList extends React.Component {
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/data_structures/tree/master/DoublyLinkedList",
                     projectURL: "",
                     projectIMG_URL: "",
-                    tools: ["C++", "iterative", "dummy"],
+                    tools: ["C++", "iterative", ""],
                     completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
@@ -66,7 +66,7 @@ class ProjectList extends React.Component {
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/personal-website",
                     projectURL: "https://serene-wildwood-73140.herokuapp.com/",
                     projectIMG_URL: "https://raw.githubusercontent.com/AGuyNamedC-Los/carlos-castillo-portfolio/master/src/images/bitmoji.png",
-                    tools: ["Javascript", "React", "Heroku", "HTML5", "CSS3"],
+                    tools: ["Javascript", "React", "Heroku", "HTML5&", "CSS3"],
                     completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
@@ -76,7 +76,7 @@ class ProjectList extends React.Component {
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/connect-3",
                     projectURL: "",
                     projectIMG_URL: "",
-                    tools: ["Lisp", "dummy", "dummy"],
+                    tools: ["Lisp", "", ""],
                     completionPercentage: 100
                 }}/> 
             </section>
