@@ -15,14 +15,13 @@ class Menu extends React.Component {
     }
 
     buttonPress(index) {
-        console.log("changing color!");
         let menuButtons = document.getElementsByClassName("menu")[0].children;
         let menuButtonImage = document.getElementsByClassName("menu_icon");
         let color = "white";
         for(let i = 0; i < menuButtons.length; i++) {
             if(i === index) {
                 menuButtons[index].style.backgroundImage = "linear-gradient(to top, #151515 0%, #1d1d1d 100%)";
-                menuButtons[index].style.boxShadow = `inset 0 16px 14px -21px transparent, 0 0px 13px 0 ${color}, inset 0 0 7px 2px ${color}`;
+                menuButtons[index].style.boxShadow = `inset 0 16px 14px -21px transparent, 0 0px 13px 0 black, inset 0 0 7px 2px black`;
                 menuButtonImage[index].style.backgroundImage = `radial-gradient(circle 10px at center, ${color} 0%, ${color} 50%, ${color} 100%)`;
                 menuButtonImage[index].style.boxShadow = "0px 0px 10px #ebf7ff";
             } else {
@@ -31,32 +30,28 @@ class Menu extends React.Component {
                 menuButtonImage[i].style.backgroundImage = "";
                 menuButtonImage[i].style.boxShadow = "";
             }
-            // if(i === index) {
-            //     if(i === 0 || i === 4) color =  "#2BC4A2";
-            //     if(i === 1 || i === 5) color = "#0290EE";
-            //     if(i === 2) color = "#582ACB";
-            //     if(i === 3) color = "#FF7139";
-            //     // if(i % 7 == 0 || i == 3) color = " #FF7139";
-            //     menuButtons[index].style.backgroundImage = "linear-gradient(to top, #151515 0%, #1d1d1d 100%)";
-            //     menuButtons[index].style.boxShadow = `inset 0 16px 14px -21px transparent, 0 0px 13px 0 ${color}, inset 0 0 7px 2px ${color}`;
-            //     menuButtonImage[index].style.backgroundImage = `radial-gradient(circle 10px at center, ${color} 0%, ${color} 50%, ${color} 100%)`;
-            //     menuButtonImage[index].style.boxShadow = "0px 0px 10px #ebf7ff";
-            // } else {
-            //     // reset the color of the button
-            //     menuButtons[i].style.boxShadow = "inset 0 20px 4px -21px rgba(255,255,255,0.4), 0 19px 13px 0 rgba(0,0,0,0.3)";
-            //     menuButtons[i].style.backgroundImage = "";
-            //     menuButtonImage[i].style.backgroundImage = "";
-            //     menuButtonImage[i].style.boxShadow = "";
-            // }
         }
     }
 
     changeSlide(index) {
-        console.log("changing slide!");
+        if(index === this.currSlide) return;
+
         let currSlide = document.getElementsByClassName("slide");
-        currSlide[this.currSlide].style.visibility = "hidden";
+        currSlide[this.currSlide].style.display = "none";      
         this.currSlide = index;
-        currSlide[this.currSlide].style.visibility = "visible";
+        setTimeout(()=> {
+            currSlide[this.currSlide].style.display = "initial";
+            currSlide[this.currSlide].style.opacity = 0;
+            setTimeout(() => {
+                currSlide[this.currSlide].style.opacity = 1;
+            }, 500)
+        },0);
+
+        
+
+        // currSlide[this.currSlide].style.visibility = "hidden";
+        // this.currSlide = index;
+        // currSlide[this.currSlide].style.visibility = "visible";
     }
 
     render() {
