@@ -46,12 +46,6 @@ class Menu extends React.Component {
                 currSlide[this.currSlide].style.opacity = 1;
             }, 500)
         },0);
-
-        
-
-        // currSlide[this.currSlide].style.visibility = "hidden";
-        // this.currSlide = index;
-        // currSlide[this.currSlide].style.visibility = "visible";
     }
 
     render() {
