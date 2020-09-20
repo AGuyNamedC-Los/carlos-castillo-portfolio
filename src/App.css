@@ -1,14 +1,31 @@
+/*-------------------------
+  colors
+-------------------------*/
+:root {
+  /* #63768D */
+  --background-color: #272727;
+  /* --background-color: #392b58; */
+  /* --card-color: #645e9d; */
+  --card-color: #131214;
+  --glow-effect: #6130eb;
+  --glow-effect-2: #F2BB05;
+  /* --text-effect-1: rgba(5,242,152,1);
+  --text-effect-2: rgba(94,42,237,1);	 */
+  --text-effect-1: #05f298;
+  --text-effect-2: #6130eb;
+}
+
+
 html {scroll-behavior: smooth;}
 
 body {
   padding: 0;
   margin: 0;
-  /* background-color: #17141D; */
   /* background-color: #17181A; */
   /* background-color:  #1b1724; */
   /* background-color:  #110d1b; */
-  background-color:  #100e17;
-  background-color:  #110e1a;
+  /* background-color:  #100e17; */
+  background-color: var(--background-color);
   color: white;
   font-family: 'DM Mono', monospace;
   overflow-x: hidden;
@@ -52,12 +69,7 @@ h1 {text-align: center;}
   border-radius: 7px;
   position: relative;
   z-index: 10;
-	/* position: fixed;
-	left: 0;
-	right: 0;
-  	
-	margin: auto;
-  z-index: 1; */
+  margin-top: 2rem;
 }
 
 @media only screen and (max-width: 800px) {
@@ -78,6 +90,8 @@ h1 {text-align: center;}
   margin: 1px;
   transition: .2s;
   box-shadow: inset 0 20px 4px -21px rgba(255,255,255,0.4), 0 19px 13px 0 rgba(0,0,0,0.3);
+  text-decoration: none;
+  user-select: none;
 }
 
 .menu img {
@@ -85,6 +99,13 @@ h1 {text-align: center;}
   width: 100%;
   max-width: 50px;
   border-radius: 16px;
+}
+
+.menu i {
+	font-size: 3rem;
+	color: black;
+	border-radius: 30px;
+	padding: 5px;
 }
 
 .menu-button::before {
@@ -102,17 +123,17 @@ h1 {text-align: center;}
 
 .menu-button:hover::after {
   color: white;
-  padding: 1rem 0rem;
+  padding: 1rem 1rem;
   display: block;
   text-align: center;
+  border-radius: 10px;
+  font-size: 1.25rem;
 
   width: 100%;
   max-width: 8rem;
   position: absolute;
   transform: translateY(90px);
-  box-shadow: inset 0 20px 4px -21px rgba(255,255,255,0.4), 0 19px 13px 0 rgba(0,0,0,0.3);
-  background-image: linear-gradient(to top, #242424 0%, #303030 100%);
-  /* box-shadow: 1rem 0rem 1rem  #7358b3, -1rem 0rem 1rem #7358b3; */
+  background-color: var(--card-color);
 }
 
 /* drop down text on menu button hover */
@@ -124,56 +145,65 @@ h1 {text-align: center;}
 .menu-button:nth-child(6):hover::after {content: "Contact Me"}
 
 /* changing the shadow color of the drop down button text on hover */
-.menu-button:hover::after {box-shadow: 1rem 0rem 1rem white, -1rem 0rem 1rem white;}
+.menu-button:hover::after {box-shadow: 1rem .5rem 1rem black, -1rem .5rem 1rem black;}
 
 /*-------------------------
   bio card 
 -------------------------*/
 .bio {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 550px;
-  max-width: 30rem;
-  margin: 0 auto;
-  background-color: #131214;
-  border-radius: 16px;
-  box-shadow: 1rem .5rem 2rem #000, -1rem .5rem 2rem #000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 550px;
+	max-width: 30rem;
+	margin: 0 auto;
+	background-color: var(--card-color);
+	border-radius: 16px;
+	box-shadow: 1rem .5rem 3rem #000, -1rem .5rem 3rem #000, 0rem 1rem 3rem #000;
 }
 
+.bio h1,
+.bio p {
+	background: linear-gradient(90deg, var(--text-effect-1), var(--text-effect-2));
+	text-shadow: none;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+} 
+
 .bio img {
-  width: 100%;
-  border: solid;
-  border-radius: 90px;
-  background-color: white;
-  max-width: 10rem;
-  margin: 0 auto;
-  margin-top: 1rem;
+	width: 100%;
+	border-radius: 90px;
+	background-color: white;
+	max-width: 10rem;
+	margin: 0 auto;
+	margin-top: 1rem;
+	box-shadow: 1rem .5rem 3rem black, -1rem .5rem 3rem black;
 }
 
 .bio h1, .bio p {
-  text-align: center;
-  font-size: 2rem;
+  	text-align: center;
+  	font-size: 2rem;
 }
 
 .bio p {
-  padding: 0 1rem;
-  font-size: 1.25rem;
+  	padding: 0 1rem;
+  	font-size: 1.25rem;
 }
 
 @media only screen and (max-width: 800px) {
   .bio {
-    max-width: 22rem;
-    height: 400px;
+    	max-width: 22rem;
+    	height: 400px;
   }
 
   .bio p {
-    font-size: .8rem;
+    	font-size: .8rem;
   }
 
   .bio h1 {
-    font-size: 1rem;
+    	font-size: 1rem;
   }
 }
 
@@ -181,28 +211,28 @@ h1 {text-align: center;}
   project cards  
 -------------------------*/
 .card-list {
-  display: flex;
-  margin: 0rem auto;
-  padding: 4rem 3rem;
-  overflow-x: auto;
-  width: 100%;
-  max-width: 95%;
+	display: flex;
+	margin: 0rem auto;
+	padding: 4rem 3rem;
+	overflow-x: auto;
+	width: 100%;
+	max-width: 95%;
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  border-radius: 16px;
-  height: 29rem;
-  max-width: 20rem;
-  min-width: 20rem;
-  padding: 1rem .5rem;
-  /* background-color: #4b42ff; */
-  /* background-color: #191425; */
-  background-color: #131214;
-  box-shadow: -1rem 0 3rem #000;
-  transition: .5s;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	border-radius: 16px;
+	height: 29rem;
+	max-width: 20rem;
+	min-width: 20rem;
+	padding: 1rem .5rem;
+	/* background-color: #4b42ff; */
+	/* background-color: #191425; */
+	background-color: var(--card-color);
+	box-shadow: -1rem 0 3rem #000;
+	transition: .5s;
 }
 
 .card:hover {transform: translateY(-2rem);} /* move the card up on hover */
@@ -211,58 +241,23 @@ h1 {text-align: center;}
 .card header, .card i {transition: .75s;}  
 
 /* changing the shadow color of the card on hover */
-.card:hover:nth-child(4n+1) {box-shadow: 1rem .5rem 2rem #2BC4A2, -1rem .5rem 2rem #2BC4A2;}
-.card:hover:nth-child(4n+2) {box-shadow: 1rem .5rem 2rem #0290EE, -1rem .5rem 2rem #0290EE;}
-.card:hover:nth-child(4n+3) {box-shadow: 1rem .5rem 2rem #582ACB, -1rem .5rem 2rem #582ACB;}
-.card:hover:nth-child(4n+4) {box-shadow: 1rem .5rem 2rem #FF7139, -1rem .5rem 2rem#FF7139;}
-
-/* changing the color text of each card */
-.card:hover:nth-child(4n+1) header, 
-.card:hover:nth-child(4n+1) h2, 
-.card:hover:nth-child(4n+1) .tools span {
-  background: linear-gradient(90deg, #88FFD1, #2BC4A2);
-  text-shadow: none;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.card:hover:nth-child(4n+2) header, 
-.card:hover:nth-child(4n+2) h2, 
-.card:hover:nth-child(4n+2) .tools span {
-  background: linear-gradient(90deg, #ACF1FF, #0290EE);
-  text-shadow: none;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.card:hover:nth-child(4n+3) header, 
-.card:hover:nth-child(4n+3) h2, 
-.card:hover:nth-child(4n+3) .tools span {
-  background: linear-gradient(90deg, #D9BFFF, #582ACB);
-  text-shadow: none;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.card:hover:nth-child(4n+4) header, 
-.card:hover:nth-child(4n+4) h2, 
-.card:hover:nth-child(4n+4) .tools span {
-  background: linear-gradient(90deg,#FFD567, #FF7139);
-  text-shadow: none;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.card:hover{box-shadow: 1rem .5rem 2rem var(--glow-effect), -1rem .5rem 2rem var(--glow-effect);}
+.card:hover header, 
+.card:hover h2, 
+.card:hover .tools span {
+	background: linear-gradient(90deg, var(--text-effect-1), var(--text-effect-2));
+	text-shadow: none;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .card header h1, 
 .card header p {text-align: center;}
 
 .project-links {
-  display: flex;
-  justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }
 
 .project-links img,
@@ -271,52 +266,52 @@ h1 {text-align: center;}
 .card a {height: 100%;}
 
 .card a:hover {
-  animation: shake 0.5s;
-  animation-iteration-count: 1; 
+	animation: shake 0.5s;
+	animation-iteration-count: 1; 
 }
 
 @keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+	0% { transform: translate(1px, 1px) rotate(0deg); }
+	10% { transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { transform: translate(-3px, 0px) rotate(1deg); }
+	30% { transform: translate(3px, 2px) rotate(0deg); }
+	40% { transform: translate(1px, -1px) rotate(1deg); }
+	50% { transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { transform: translate(-3px, 1px) rotate(0deg); }
+	70% { transform: translate(3px, 1px) rotate(-1deg); }
+	80% { transform: translate(-1px, -1px) rotate(1deg); }
+	90% { transform: translate(1px, 2px) rotate(0deg); }
+	100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
 .card i {
-  background-color: #17181A;
-  color: white;
-  font-size: 3rem;
+	background-color: #17181A;
+	color: white;
+	font-size: 3rem;
 }
 
 .card img {
-  width: 100%;
-  max-width: 3rem;
-  background-color: white;
+	width: 100%;
+	max-width: 3rem;
+	background-color: white;
 }
 
 .card h2 {text-align: center;}
 
 .tools {
-  width: 100%;
-  display: grid;
-  grid-gap: 10px 5px;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-template-rows: auto;
+	width: 100%;
+	display: grid;
+	grid-gap: 10px 5px;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	grid-template-rows: auto;
 }
 
 .tools span {
-  text-align: center;
-  display: inline;
-  border: solid;
-  border-radius: 16px;
-  border-width: 2px;
+	text-align: center;
+	display: inline;
+	border: solid;
+	border-radius: 16px;
+	border-width: 2px;
 }
 
 /*-------------------------
@@ -324,25 +319,22 @@ h1 {text-align: center;}
 -------------------------*/
 
 .progress {
-  border-radius: 30px;
-  padding: .25rem .25rem;
-  background: rgba(0, 0, 0, 0.25);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+	border-radius: 30px;
+	padding: .25rem .25rem;
+	background: rgba(0, 0, 0, 0.25);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .progress-value {
-  border-radius: 30px;
-  padding: .75rem 0;
-  width: 7%;
-  transition: 1.5s;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+	border-radius: 30px;
+	padding: .75rem 0;
+	width: 7%;
+	transition: 1.5s;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
 }
 
-/* changet the color of the progress bar */
-.card:hover:nth-child(4n+1) .progress-value {background-image: linear-gradient(to bottom, #88FFD1, #2BC4A2);}
-.card:hover:nth-child(4n+2) .progress-value {background-image: linear-gradient(to bottom, #ACF1FF, #0290EE);}
-.card:hover:nth-child(4n+3) .progress-value {background-image: linear-gradient(to bottom,#D9BFFF, #582ACB);}
-.card:hover:nth-child(4n+4) .progress-value {background-image: linear-gradient(to bottom,#FFD567, #FF7139);}
+/* change the color of the progress bar */
+.card:hover .progress-value {background-image: linear-gradient(to right, var(--text-effect-1) 0%, var(--text-effect-2) 100%);}
 
 /* progress bar lengths */
 .card:hover:nth-child(1) .progress-value {width: 80%;}  /* pathfinder interactive */
@@ -359,23 +351,22 @@ h1 {text-align: center;}
 .card-list.contact-me {justify-content: center;}
 
 .card.email-option {
-  user-select: none;
-  text-decoration: none; 
-  color: white;
-  justify-content: center;
-  height: 200px;
-  cursor: pointer;
+	user-select: none;
+	text-decoration: none; 
+	color: white;
+	justify-content: center;
+	height: 200px;
+	cursor: pointer;
 }
 
 /*-------------------------
   carousel
 -------------------------*/
 #page-content {
-  /* width: 300%; */
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  position: absolute;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	position: absolute;
 	top:0;
 	bottom: 0;
 	left: 0;
@@ -383,6 +374,5 @@ h1 {text-align: center;}
 	margin: auto;
 }
 
-.slide {width: 100%; transition: 1s ease-in-out;}
-/* .slide:nth-child(2), .slide:nth-child(3) {visibility: hidden;} */
-.slide:nth-child(2), .slide:nth-child(3) {display: none;}
+.slide {width: 100%; transition: 1s ease-in-out;} /* so that it fades in slowly */
+.slide:nth-child(2), .slide:nth-child(3) {display: none;} /* ensures only one page is loaded on page landing */

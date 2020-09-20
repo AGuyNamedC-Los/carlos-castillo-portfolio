@@ -29,6 +29,7 @@ class Menu extends React.Component {
                 menuButtons[i].style.backgroundImage = "";
                 menuButtonImage[i].style.backgroundImage = "";
                 menuButtonImage[i].style.boxShadow = "";
+                menuButtonImage[i].style.color = "black";
             }
         }
     }
@@ -51,12 +52,12 @@ class Menu extends React.Component {
     render() {
         return (
             <div className="menu">
-                <a className="menu-button" href="#slide-1" onClick={() => {this.buttonPress(0); this.changeSlide(0)}}><img className="menu_icon" src={home} alt="home"></img></a>
-                <a className="menu-button" href="https://docs.google.com/document/d/1K-3VK16w9j0yWRLB88lPVZMlzlR8DVcQ9ZDwyTef5oM/edit" target="_blank" rel="noopener noreferrer" onClick={this.buttonPress.bind(this, 1)}><img className="menu_icon" src={resume} alt="resume"></img></a>
-                <a className="menu-button" href="https://www.linkedin.com/in/carlos-castillo-1363a6133/" target="_blank" rel="noopener noreferrer" onClick={this.buttonPress.bind(this, 2)}><img className="menu_icon" src={linkedin} alt="linkedin"></img></a>
-                <a className="menu-button" href="https://github.com/AGuyNamedC-Los" target="_blank" rel="noopener noreferrer" onClick={this.buttonPress.bind(this, 3)}><img className="menu_icon" src={github} alt="github"></img></a>
-                <a className="menu-button" href="#slide-2" onClick={() => {this.buttonPress(4); this.changeSlide(1)}}><img className="menu_icon" src={projects} alt="projects"></img></a>
-                <a className="menu-button" href="#slide-3" onClick={() => {this.buttonPress(5); this.changeSlide(2)}}><img className="menu_icon" src={contactMe} alt="contact me"></img></a>
+                <a className="menu-button" href="#slide-1" onClick={() => {this.buttonPress(0); this.changeSlide(0)}}>{/*<img className="menu_icon" src={home} alt="home"></img>}*/}<i class="fas fa-user menu_icon"></i></a>
+                <a className="menu-button" href="https://docs.google.com/document/d/1K-3VK16w9j0yWRLB88lPVZMlzlR8DVcQ9ZDwyTef5oM/edit" target="_blank" rel="noopener noreferrer" onClick={this.buttonPress.bind(this, 1)}>{/*<img className="menu_icon" src={resume} alt="resume">*</img>*/}<i class="far fa-file menu_icon"></i></a>
+                <a className="menu-button" href="https://www.linkedin.com/in/carlos-castillo-1363a6133/" target="_blank" rel="noopener noreferrer" onClick={this.buttonPress.bind(this, 2)}>{/*<img className="menu_icon" src={linkedin} alt="linkedin"></img>*/}<i class="fab fa-linkedin menu_icon"></i></a>
+                <a className="menu-button" href="https://github.com/AGuyNamedC-Los" target="_blank" rel="noopener noreferrer" onClick={this.buttonPress.bind(this, 3)}>{/*<img className="menu_icon" src={github} alt="github"></img>*/}<i class="fab fa-github-square menu_icon"></i></a>
+                <a className="menu-button" href="#slide-2" onClick={() => {this.buttonPress(4); this.changeSlide(1)}}><i class="fas fa-lightbulb menu_icon"></i></a>
+                <a className="menu-button" href="#slide-3" onClick={() => {this.buttonPress(5); this.changeSlide(2)}}>{/*<img className="menu_icon" src={contactMe} alt="contact me"></img>*/}<i class="fas fa-address-book menu_icon"></i></a>
             </div>
         );
     }
