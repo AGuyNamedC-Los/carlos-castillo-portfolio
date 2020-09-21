@@ -41,6 +41,16 @@ class ProjectList extends React.Component {
                 }}/>
                 <ProjectCard cardInfo={{
                     index: "3",
+                    projectName: "Text-Mockify",
+                    projectDescription: "Enter plain text into the text area to transform it into mockified text!",
+                    githubProjectURL: "https://github.com/AGuyNamedC-Los/text-mockify/tree/master/src",
+                    projectURL: "https://text-mockify.herokuapp.com/",
+                    projectIMG_URL: "https://i.pinimg.com/originals/30/f8/8a/30f88a741221bbb0387a2067c9a92a87.jpg",
+                    tools: ["Javascript", "React", "Heroku", "HTML5", "CSS3"],
+                    completionPercentage: 85
+                }}/> 
+                <ProjectCard cardInfo={{
+                    index: "4",
                     projectName: "Tree Data Structure",
                     projectDescription: "A c++ tree that features basic tree funtions as well as different methods of search functions like BFS and DFS",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/data_structures/tree/master/BasicTree",
@@ -50,7 +60,7 @@ class ProjectList extends React.Component {
                     completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
-                    index: "4",
+                    index: "5",
                     projectName: "Doubly Linked List Data Structure",
                     projectDescription: "A c++ doubly linked list that features basic linked list funtions",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/data_structures/tree/master/DoublyLinkedList",
@@ -60,7 +70,7 @@ class ProjectList extends React.Component {
                     completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
-                    index: "5",
+                    index: "6",
                     projectName: "Portfolio Website v1",
                     projectDescription: "This was my first iteration of a portfolio website, it has since been depricated and will no longer receive any updates",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/personal-website",
@@ -70,7 +80,7 @@ class ProjectList extends React.Component {
                     completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
-                    index: "6",
+                    index: "7",
                     projectName: "Connect-3",
                     projectDescription: "Single player game of connect-3 against a Lisp based AI",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/connect-3",
