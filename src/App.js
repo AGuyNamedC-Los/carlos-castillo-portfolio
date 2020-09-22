@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-// import logo from './logo.svg';
 import './App.css';
-// import MainApp from "./MainApp.js";
 import Menu from "./components/Menu.js";
 import Bio from "./components/Bio.js";
 import ProjectList from './components/projects/ProjectsList';
