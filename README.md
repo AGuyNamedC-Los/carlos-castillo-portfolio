@@ -1,7 +1,7 @@
 # Carlos Castillo Website Portfolio
 
 A [portfolio website](https://carlos-castillo-portfolio.herokuapp.com/) showcasing my projects and links to my LinkedIn, Github, and resume. 
-- *Note* Please allow a couple seconds for the website to load,
+- *Note* Please allow a couple seconds for the website to load.
 
 # Description
 
