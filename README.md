@@ -24,7 +24,9 @@ To have more of an online precense and means for people to contact me and view m
 - src
     - components -> folder containing all the components used in the App.js file
         - projects -> folder containing the necessary components to create the deck of cards containing my projects
-        - 
+        - Bio.js - > component that creates the bio page
+        - ContactMe.js -> component that creates the contact me page
+        - Menu.js -> component that creates the menu page
     - App.css -> all the css for the app
     - App.js -> file containing all of the components used to create the website
     - MainApp.js - > first iteration of me attempting to create this app, does not properly utilize components and therefore is not used as a component
