@@ -22,8 +22,8 @@ To have more of an online precense and means for people to contact me and view m
 # Github Code Navigation
 
 - :file_folder: **src**
-    - **components**: folder containing all the components used in the App.js file
-        - **projects**: folder containing the necessary components to create the deck of cards containing my projects
+    - :file_folder: **components**: folder containing all the components used in the App.js file
+        - :file_folder: **projects**: folder containing the necessary components to create the deck of cards containing my projects
         - :page_facing_up: **Bio.js**: component that creates the bio page
         - :page_facing_up: **ContactMe.js**: component that creates the contact me page
         - :page_facing_up: **Menu.js**: component that creates the menu page
