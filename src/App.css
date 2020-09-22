@@ -375,7 +375,6 @@ h1 {text-align: center;}
 -------------------------*/
 #page-content {
 	display: inline-block;
-	border: solid;
 	overflow: hidden;
 	display: flex;
 	align-items: center;
