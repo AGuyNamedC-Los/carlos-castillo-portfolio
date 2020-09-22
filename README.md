@@ -9,7 +9,7 @@ This website is my second iteration of a portfolio website as a means to have al
 
 # Motivation
 
-To have more of an online precense and means for people to contact me and view my work. I also used it as an opportunity for practice creating websites using React.
+To have more of an online precense and means for people to contact me and view my work. I also used it as an opportunity to practice using React
 
 # Technological Tools Used
 
