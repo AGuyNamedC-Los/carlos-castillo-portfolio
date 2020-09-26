@@ -47,7 +47,7 @@ class ProjectList extends React.Component {
                     projectURL: "https://text-mockify.herokuapp.com/",
                     projectIMG_URL: "https://i.pinimg.com/originals/30/f8/8a/30f88a741221bbb0387a2067c9a92a87.jpg",
                     tools: ["Javascript", "React", "Heroku", "HTML5", "CSS3"],
-                    completionPercentage: 85
+                    completionPercentage: 100
                 }}/> 
                 <ProjectCard cardInfo={{
                     index: "4",
