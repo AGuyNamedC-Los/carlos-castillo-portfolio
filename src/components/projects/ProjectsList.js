@@ -32,9 +32,9 @@ class ProjectList extends React.Component {
                 <ProjectCard cardInfo={{
                     index: "2",
                     projectName: "Gift-ee",
-                    projectDescription: "Social media-esque website that lets you manage one gift list and can include items from any number of online stores",
+                    projectDescription: "Social media-esque website that lets you manage your own gift list and can include items from any number of online stores",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/gift-ee",
-                    projectURL: "https://tranquil-fjord-29285.herokuapp.com/",
+                    projectURL: "https://gift-ee.herokuapp.com/",
                     projectIMG_URL: "https://raw.githubusercontent.com/AGuyNamedC-Los/carlos-castillo-portfolio/master/src/images/gift.png",
                     tools: ["Javascript", "Nunjucks", "Heroku", "HTML5", "CSS3"],
                     completionPercentage: 35
