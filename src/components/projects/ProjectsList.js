@@ -17,7 +17,7 @@ class ProjectList extends React.Component {
                     projectURL: "https://pathfinder-interactive.herokuapp.com/",
                     projectIMG_URL: "https://raw.githubusercontent.com/AGuyNamedC-Los/pathfinder_interactive/master/path.png",
                     tools: ["Javascript", "Heroku", "HTML5", "CSS3"],
-                    completionPercentage: 80
+                    completionPercentage: 85
                 }}/>
                 <ProjectCard cardInfo={{
                     index: "1",
@@ -41,6 +41,16 @@ class ProjectList extends React.Component {
                 }}/>
                 <ProjectCard cardInfo={{
                     index: "3",
+                    projectName: "AVL Tree",
+                    projectDescription: "a C# AVL tree implementation with various functions to manipulate and display the tree",
+                    githubProjectURL: "https://github.com/AGuyNamedC-Los/data_structures/tree/master/AVL_Tree",
+                    projectURL: "",
+                    projectIMG_URL: "",
+                    tools: ["C#", "", ""],
+                    completionPercentage: "95"
+                }}/>
+                <ProjectCard cardInfo={{
+                    index: "4",
                     projectName: "Text-Mockify",
                     projectDescription: "Enter plain text into the text area to transform it into mockified text!",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/text-mockify/tree/master/src",
@@ -50,7 +60,7 @@ class ProjectList extends React.Component {
                     completionPercentage: 100
                 }}/> 
                 <ProjectCard cardInfo={{
-                    index: "4",
+                    index: "5",
                     projectName: "Tree Data Structure",
                     projectDescription: "A c++ tree that features basic tree funtions as well as different methods of search functions like BFS and DFS",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/data_structures/tree/master/BasicTree",
@@ -60,7 +70,7 @@ class ProjectList extends React.Component {
                     completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
-                    index: "5",
+                    index: "6",
                     projectName: "Doubly Linked List Data Structure",
                     projectDescription: "A c++ doubly linked list that features basic linked list funtions",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/data_structures/tree/master/DoublyLinkedList",
@@ -70,7 +80,7 @@ class ProjectList extends React.Component {
                     completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
-                    index: "6",
+                    index: "7",
                     projectName: "Portfolio Website v1",
                     projectDescription: "This was my first iteration of a portfolio website, it has since been depricated and will no longer receive any updates",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/personal-website",
@@ -80,7 +90,7 @@ class ProjectList extends React.Component {
                     completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
-                    index: "7",
+                    index: "8",
                     projectName: "Connect-3",
                     projectDescription: "Single player game of connect-3 against a Lisp based AI",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/connect-3",
@@ -106,5 +116,5 @@ export default ProjectList
     projectIMG_URL: "",
     tools: [],
     completionPercentage: ""
-}}/> 
+}}/>
 */}
