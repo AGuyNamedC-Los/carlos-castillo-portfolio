@@ -335,7 +335,7 @@ h1 {text-align: center;}
 /* progress bar lengths */
 .card:hover:nth-child(1) .progress-value {width: 85%;}  /* pathfinder interactive */
 .card:hover:nth-child(2) .progress-value {width: 100%;}  /* carlos-castillo-portfolio v2 */
-.card:hover:nth-child(3) .progress-value {width: 40%;}  /* gift-ee */
+.card:hover:nth-child(3) .progress-value {width: 70%;}  /* gift-ee */
 .card:hover:nth-child(4) .progress-value {width: 95%;}	/* avl tree */
 .card:hover:nth-child(5) .progress-value {width: 100%;}	/* text-mockify */
 .card:hover:nth-child(6) .progress-value {width: 100%;}
