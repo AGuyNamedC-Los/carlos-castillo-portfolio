@@ -13,7 +13,7 @@ class ProjectCard extends React.Component {
     }
 
     handleMouseEnter() {this.setState({isHovering: true});}
-    handleMouseLeave() {this.setState({isHovering: false})}
+    handleMouseLeave() {this.setState({isHovering: false});}
 
     render() {
         return(

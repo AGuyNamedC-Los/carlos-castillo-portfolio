@@ -21,6 +21,16 @@ class ProjectList extends React.Component {
                 }}/>
                 <ProjectCard cardInfo={{
                     index: "1",
+                    projectName: "Giftee",
+                    projectDescription: "Social media-esque website that lets you manage your own gift list and can include items from any number of online stores",
+                    githubProjectURL: "https://github.com/AGuyNamedC-Los/giftee",
+                    projectURL: "https://gift-ee.herokuapp.com/",
+                    projectIMG_URL: "https://raw.githubusercontent.com/AGuyNamedC-Los/carlos-castillo-portfolio/master/src/images/gift.png",
+                    tools: ["Javascript", "Nunjucks", "Heroku", "Knex", "HTML5", "CSS3"],
+                    completionPercentage: 70
+                }}/>
+                <ProjectCard cardInfo={{
+                    index: "2",
                     projectName: "Portfolio Website v2",
                     projectDescription: "Second iteration of my personal portfolio website containing links to all my work, criteria, and social media",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/carlos-castillo-portfolio",
@@ -30,17 +40,17 @@ class ProjectList extends React.Component {
                     completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
-                    index: "2",
-                    projectName: "Gift-ee",
+                    index: "3",
+                    projectName: "Giftee (depricated)",
                     projectDescription: "Social media-esque website that lets you manage your own gift list and can include items from any number of online stores",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/gift-ee",
-                    projectURL: "https://gift-ee.herokuapp.com/",
-                    projectIMG_URL: "https://raw.githubusercontent.com/AGuyNamedC-Los/carlos-castillo-portfolio/master/src/images/gift.png",
+                    projectURL: "",
+                    projectIMG_URL: "",
                     tools: ["Javascript", "Nunjucks", "Heroku", "HTML5", "CSS3"],
                     completionPercentage: 70
                 }}/>
                 <ProjectCard cardInfo={{
-                    index: "3",
+                    index: "4",
                     projectName: "AVL Tree",
                     projectDescription: "a C# AVL tree implementation with various functions to manipulate and display the tree",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/data_structures/tree/master/AVL_Tree",
@@ -50,7 +60,7 @@ class ProjectList extends React.Component {
                     completionPercentage: "95"
                 }}/>
                 <ProjectCard cardInfo={{
-                    index: "4",
+                    index: "5",
                     projectName: "Text-Mockify",
                     projectDescription: "Enter plain text into the text area to transform it into mockified text!",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/text-mockify/tree/master/src",
@@ -60,7 +70,7 @@ class ProjectList extends React.Component {
                     completionPercentage: 100
                 }}/> 
                 <ProjectCard cardInfo={{
-                    index: "5",
+                    index: "6",
                     projectName: "Tree Data Structure",
                     projectDescription: "A c++ tree that features basic tree funtions as well as different methods of search functions like BFS and DFS",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/data_structures/tree/master/BasicTree",
@@ -70,7 +80,7 @@ class ProjectList extends React.Component {
                     completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
-                    index: "6",
+                    index: "7",
                     projectName: "Doubly Linked List Data Structure",
                     projectDescription: "A c++ doubly linked list that features basic linked list funtions",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/data_structures/tree/master/DoublyLinkedList",
@@ -80,7 +90,7 @@ class ProjectList extends React.Component {
                     completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
-                    index: "7",
+                    index: "8",
                     projectName: "Portfolio Website v1",
                     projectDescription: "This was my first iteration of a portfolio website, it has since been depricated and will no longer receive any updates",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/personal-website",
@@ -90,7 +100,7 @@ class ProjectList extends React.Component {
                     completionPercentage: 100
                 }}/>
                 <ProjectCard cardInfo={{
-                    index: "8",
+                    index: "9",
                     projectName: "Connect-3",
                     projectDescription: "Single player game of connect-3 against a Lisp based AI",
                     githubProjectURL: "https://github.com/AGuyNamedC-Los/connect-3",
